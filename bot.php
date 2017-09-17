@@ -8,7 +8,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
-	if($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == 'หยุดไอ้บอท'){
+	if($events['events']['type'] == 'message' && $events['events']['message']['type'] == 'text' && $events['events']['message']['text'] == 'หยุดไอ้บอท'){
 		$stop = 1;
 	}
 	foreach ($events['events'] as $event) {
