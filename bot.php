@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		
-	if($event['text'] == 'หยุดไอ้บอท'){
+	if($event['message']['text'] == 'หยุดไอ้บอท'){
 		$stop = 1;
 	}
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $stop != 1) {
