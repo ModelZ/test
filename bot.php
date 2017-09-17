@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 		$_SESSION['stop'] = 1;
 	}
 		
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
 			$text = $event['message']['text']."ใจดี";
 			// Get replyToken
