@@ -8,15 +8,12 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
+	if($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == 'หยุดไอ้บอท'){
+		$stop = 1;
+	}
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		
-		if($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == 'หยุดไอ้บอท'){
-			$stop = 1;
-		}
-			
-		
-		
+
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $stop != 1) {
 			// Get text sent
 			$text = $event['message']['text']."ใจดี";
