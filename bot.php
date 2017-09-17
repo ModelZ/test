@@ -8,7 +8,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
-	if($stop = 1){
+	if($stop == 1){
 		exit;
 	}
 	
