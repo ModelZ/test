@@ -10,7 +10,15 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		
+		if($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == 'หยุดไอ้บอท'){
+			$temp = $events;
+			$events = '';
+		}
+			
+		
+		
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $events != '') {
 			// Get text sent
 			$text = $event['message']['text']."โก้ผีบ้า";
 			// Get replyToken
@@ -41,7 +49,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else{
+		}else if( $events != '' ){
 			$text = "ส่งสติ้กมาทำไม??";
 			
 			$replyToken = $event['replyToken'];
@@ -73,4 +81,4 @@ if (!is_null($events['events'])) {
 			
 	}
 }
-echo "OK";
+echo "OK THEN";
