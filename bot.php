@@ -1,4 +1,5 @@
 <?php
+session_start();
 $access_token = '6W2OTEsmOrywElp+4VOXXOhvkRK8JzxpMLpD/Ev/6r5JpOhjP3CR+s9l0rrj6sRziSHyq5qTtNEnFavVecf4BwV+jZ0BvFhCb13unniqRMhfnBFL8/l0OLQYNGjw6wzjVT65ZVWNKJnj3TRjSngnIAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -8,17 +9,15 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
-	if($stop == 1){
-		exit;
-	}
-	
+
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		
 	if($event['message']['text'] == 'หยุดไอ้บอท'){
-		$stop = 1;
+		$_SESSION['stop'] = 1;
 	}
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $stop != 1) {
+		
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $_SESSION['stop'] != 1) {
 			// Get text sent
 			$text = $event['message']['text']."ใจดี";
 			// Get replyToken
@@ -49,7 +48,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else if( $stop != 1){
+		}else if( $_SESSION['stop'] != 1){
 			$text = "ส่งสติ้กมาทำไม??";
 			
 			$replyToken = $event['replyToken'];
