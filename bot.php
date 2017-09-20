@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			$event['message']['text'] = str_replace("รึเปล่าครับ","รึเปล่าคะ",$event['message']['text']);
 			$event['message']['text'] = str_replace("ไหมครับ","ไหมคะ",$event['message']['text']);
 			$event['message']['text'] = str_replace("ครับ","ค่ะ",$event['message']['text']);
-			$event['message']['text'] = str_replace("ผม","หนู",$event['message']['text']);
+			$event['message']['text'] = str_replace("ผม,กู","หนู",$event['message']['text']);
 			$ch = $event['message']['text'];
 			switch($ch){
 				case "พี่ไวท์" : $text = "พี่ไวท์ผู้กินมากเกินไป";
