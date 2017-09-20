@@ -32,9 +32,9 @@ if (!is_null($events['events'])) {
 					break;
 				case "ชื่ออะไรอ่ะ" : $text = "เราชื่อบอทเทพอ่ะ คนเทพสร้างขึ้นมาแหละ555";
 					break;
-				case "บี" : $text = "มายูริกับเราไหคะ ^^";
+				case "บี" : $text = "มายูริกับเราไหมคะ ^^";
 					break;
-				default : $text = $event['message']['text']."เงอะ";
+				default : $text = $event['message']['text']."บ้า";
 					break;
 			}
 			// Get replyToken
