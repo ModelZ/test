@@ -50,9 +50,9 @@ if (!is_null($events['events'])) {
 				default : $text = $event['message']['text'];
 					break;
 			}
-			if(str_replace("***","***",$event['message']['text'])){
+			/*if(str_replace("***","***",$event['message']['text'])){
 				$text = "$event['message']['text'] <br> ไม่พูดคำหยาบนะคะ ^^";
-			}
+			}*/
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
