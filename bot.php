@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else if($event['type'] != 'message' && $event['message']['type'] != 'text'){
+		}else{
 			$text = "ส่ง สติ้ก/รูป มาทำไม??";
 			
 			$replyToken = $event['replyToken'];
