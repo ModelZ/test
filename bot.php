@@ -50,9 +50,6 @@ if (!is_null($events['events'])) {
 				default : $text = $event['message']['text'];
 					break;
 			}
-			if($text.'*'){
-				strrev($event['message']['text']);
-			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
