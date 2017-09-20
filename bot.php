@@ -20,11 +20,21 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$ch = $event['message']['text'];
 			switch($ch){
-				case "." : $text = "พี่ไวท์ดอก";
+				case "พี่ไวท์" : $text = "พี่ไวท์ผู้กินมากเกินไป";
 					break;
 				case "โก้" : $text = "พี่โก้เกรียนแตก";
 					break;
-				default : $text = $event['message']['text'];
+				case "โมเดล" : $text = "ราชาcommand";
+					break;
+				case "รินคุง" : $text = $event['message']['text'].'จ๋า~~~';
+					break;
+				case "สวัสดี" : $text = "สวัสดีค่า ^^";
+					break;
+				case "ชื่ออะไรอ่ะ" : $text = "เราชื่อบอทเทพอ่ะ คนเทพสร้างขึ้นมาแหละ555";
+					break;
+				case "บี" : $text = "มายูริกับเราไหคะ ^^";
+					break;
+				default : $text = $event['message']['text']."เงอะ";
 					break;
 			}
 			// Get replyToken
