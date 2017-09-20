@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}else {
-			$text = "ส่งสติ้กมาทำไม??";
+			$text = "ส่ง สติ้ก/รูป มาทำไม??";
 			
 			$replyToken = $event['replyToken'];
 
