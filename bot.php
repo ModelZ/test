@@ -18,7 +18,17 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
-			$event['message']['text'] = str_replace("ครับ","ค่า",$event['message']['text']);
+			$event['message']['text'] = str_replace("อี","**",$event['message']['text']);
+			$event['message']['text'] = str_replace("ควย","***",$event['message']['text']);
+			$event['message']['text'] = str_replace("สัส","***",$event['message']['text']);
+			$event['message']['text'] = str_replace("เหี้ย","***",$event['message']['text']);
+			$event['message']['text'] = str_replace("ดอก","***",$event['message']['text']);
+			$event['message']['text'] = str_replace("หี","**",$event['message']['text']);
+			$event['message']['text'] = str_replace("ควย","***",$event['message']['text']);
+			$event['message']['text'] = str_replace("รึเปล่าครับ","รึเปล่าคะ",$event['message']['text']);
+			$event['message']['text'] = str_replace("ไหมครับ","ไหมคะ",$event['message']['text']);
+			$event['message']['text'] = str_replace("ครับ","ค่ะ",$event['message']['text']);
+			$event['message']['text'] = str_replace("ผม","หนู",$event['message']['text']);
 			$ch = $event['message']['text'];
 			switch($ch){
 				case "พี่ไวท์" : $text = "พี่ไวท์ผู้กินมากเกินไป";
@@ -35,7 +45,7 @@ if (!is_null($events['events'])) {
 					break;
 				case "บี" : $text = "มายูริกับเราไหมคะ ^^";
 					break;
-				default : $text = $event['message']['text']."บ้า";
+				default : $text = $event['message']['text'];
 					break;
 			}
 			// Get replyToken
