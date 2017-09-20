@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
-			$text = $event['message']['text']."แฮร่";
+			$text = "พี่ไวท์ดอกแฮร่";
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
