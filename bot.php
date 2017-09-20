@@ -18,6 +18,7 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
+			$event['message']['text'] = str_replace("ครับ","ค่า",$event['message']['text']);
 			$ch = $event['message']['text'];
 			switch($ch){
 				case "พี่ไวท์" : $text = "พี่ไวท์ผู้กินมากเกินไป";
