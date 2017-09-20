@@ -18,7 +18,15 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
-			$text = $event['message']['text']."ไงง";
+			$ch = $event['message']['text'];
+			switch($ch){
+				case "." : $text = "พี่ไวท์ดอก";
+					break;
+				case "โก้" : $text = "พี่โก้เกรียนแตก";
+					break;
+				default : $text = $event['message']['text'];
+					break;
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
