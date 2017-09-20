@@ -51,8 +51,7 @@ if (!is_null($events['events'])) {
 					break;
 			}
 			$chh = $event['message']['text'].'*';
-			if($text === $chh){
-				$event['message']['text'] = str_replace("*"," ",$event['message']['text']);
+			if($text == $chh){
 				strrev($event['message']['text']);
 			}
 			// Get replyToken
