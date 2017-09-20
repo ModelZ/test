@@ -18,9 +18,9 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'หยุดไอ้บอท') {
 			// Get text sent
+			$event['message']['text'] = str_replace("แดก","กิน",$event['message']['text']);
 			$event['message']['text'] = str_replace("สาส","***",$event['message']['text']);
 			$event['message']['text'] = str_replace("อี","**",$event['message']['text']);
-			$event['message']['text'] = str_replace("ควย","***",$event['message']['text']);
 			$event['message']['text'] = str_replace("สัส","***",$event['message']['text']);
 			$event['message']['text'] = str_replace("เหี้ย","***",$event['message']['text']);
 			$event['message']['text'] = str_replace("ดอก","***",$event['message']['text']);
