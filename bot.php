@@ -47,7 +47,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else if($event['type'] == 'sticker'){
+		}else {
 			$text = "ส่งสติ้กมาทำไม??";
 			
 			$replyToken = $event['replyToken'];
